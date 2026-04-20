@@ -1,0 +1,16 @@
+<div ng-controller="ReaderDemoController as vm" class="reader-demo">
+  <button type="button" ng-click="vm.openReader()">Open Document Reader</button>
+
+  <regula-reader
+    is-open="vm.readerOpen"
+    license="vm.regulaLicense"
+    on-process-finished="vm.handleProcessFinished(result)"
+    on-close="vm.handleClose(event)">
+  </regula-reader>
+
+  <h4>Last PROCESS_FINISHED payload</h4>
+  <pre>{{ vm.latestResult | json }}</pre>
+
+  <h4>Last CLOSE payload</h4>
+  <pre>{{ vm.closeReason | json }}</pre>
+</div>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS + Regula Web Components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body ng-app="legacy.regula.sample">
+    <div ng-include="'sample.template.html'"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+
+    <!-- Built output from regula-integration/esbuild.config.mjs -->
+    <script src="../../dist/regula-wrapper.iife.js"></script>
+
+    <script src="../regula.module.js"></script>
+    <script src="../regula-sdk.service.js"></script>
+    <script src="../regula-reader.component.js"></script>
+    <script src="sample.controller.js"></script>
+  </body>
+</html>
