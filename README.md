@@ -119,3 +119,10 @@ A commented example is in `src/regula-wrapper.js`:
 - The sample assumes one active reader instance. If you need multiple concurrent readers, add reference counting before global `shutdown()`.
 - Exact result payload shape can vary by SDK version; completion checks are defensive (`completed`, `status`, and `action`).
 - `dist/regula-wrapper.iife.js` is build output and should be generated in CI/CD or during integration.
+
+### Troubleshooting install errors
+
+If you see `SyntaxError: Unexpected token {` from `esbuild/install.js`, your Node runtime is too old for this branch.
+
+- Supported: Node `>=18 <21` and npm `9.5.0`.
+- Warnings such as `qrcode.react requires a peer of react...` are transitive dependency warnings from upstream packages and do not mean this integration is a React app.
