@@ -9,6 +9,7 @@
     "npm": "9.5.0"
   },
   "scripts": {
+    "preinstall": "node scripts/check-env.js",
     "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
     "prebuild": "npm run clean",
     "build": "node esbuild.config.mjs",
@@ -18,7 +19,7 @@
     "run:sample": "npm run build && npm run serve:sample"
   },
   "dependencies": {
-    "@regulaforensics/vp-frontend-document-components": "^7.2.0"
+    "@regulaforensics/vp-frontend-document-components": "2.6.1"
   },
   "devDependencies": {
     "esbuild": "^0.25.4",
