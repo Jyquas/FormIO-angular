@@ -3,13 +3,25 @@
   "private": true,
   "version": "1.0.0",
   "description": "Small wrapper bundle that exposes Regula document web components to AngularJS 1.x.",
+  "packageManager": "npm@9.5.0",
+  "engines": {
+    "node": ">=18 <21",
+    "npm": "9.5.0"
+  },
   "scripts": {
-    "build": "node esbuild.config.mjs"
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+    "prebuild": "npm run clean",
+    "build": "node esbuild.config.mjs",
+    "postbuild": "node -e \"require('fs').accessSync('dist/regula-wrapper.iife.js')\"",
+    "dev": "node esbuild.config.mjs --watch",
+    "serve:sample": "npx --yes http-server legacy/sample -p 8080 -c-1",
+    "run:sample": "npm run build && npm run serve:sample"
   },
   "dependencies": {
     "@regulaforensics/vp-frontend-document-components": "^7.2.0"
   },
   "devDependencies": {
-    "esbuild": "^0.25.4"
+    "esbuild": "^0.25.4",
+    "http-server": "^14.1.1"
   }
 }
