@@ -125,5 +125,4 @@ A commented example is in `src/regula-wrapper.js`:
 If you see `SyntaxError: Unexpected token {` from `esbuild/install.js`, your Node runtime is too old for this branch.
 
 - Supported: Node `>=18 <21` and npm `9.5.0`.
-- The branch now includes a `preinstall` check that fails fast with a clear message if versions are incompatible.
 - Warnings such as `qrcode.react requires a peer of react...` are transitive dependency warnings from upstream packages and do not mean this integration is a React app.
